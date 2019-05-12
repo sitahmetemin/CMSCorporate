@@ -13,7 +13,7 @@ Route::prefix('admin')->group(function () {
 //    -------------------------------------------------------------List
     Route::get('/posts', 'AdminHomeController@index');
     Route::get('/products', 'AdminHomeController@index');
-    Route::get('/menus', 'AdminHomeController@index');
+    Route::get('/menus', 'AdminMenuController@index');
     Route::get('/users', 'AdminHomeController@index');
     Route::get('/slider', 'AdminHomeController@index');
 

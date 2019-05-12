@@ -27,16 +27,16 @@ class Post extends Model
 
     public function user()
     {
-        return $this->hasOne('User');
+        return $this->hasOne('App\User');
     }
 
     public function menu()
     {
-        return $this->hasOne('Menu');
+        return $this->hasOne('App\Menu');
     }
 
     public function album()
     {
-        return $this->hasMany('Album');
+        return $this->hasMany('App\Album');
     }
 }

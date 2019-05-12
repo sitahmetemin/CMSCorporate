@@ -38,6 +38,11 @@
     <link rel="stylesheet" href="/admin/assets/pages/chart/radial/css/radial.css" type="text/css" media="all">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="/admin/assets/css/style.css">
+    {{-- Core CSS--}}
+    <link rel="stylesheet" href="/admin/assets/core.css">
+
+    @yield('css')
+
 </head>
 <!-- Menu sidebar static layout -->
 

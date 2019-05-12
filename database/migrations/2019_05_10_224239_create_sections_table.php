@@ -15,6 +15,12 @@ class CreateSectionsTable extends Migration
     {
         Schema::create('sections', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->text('content');
+            $table->longText('html');
+            $table->string('cover');
+            $table->enum('status', ["active", "passive"])->default("active");
+            $table->unsignedBigInteger("album_id");
             $table->timestamps();
             $table->softDeletes();
         });

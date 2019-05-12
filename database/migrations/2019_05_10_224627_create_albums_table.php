@@ -18,7 +18,8 @@ class CreateAlbumsTable extends Migration
             $table->string('path');
             $table->integer('order');
             $table->unsignedBigInteger('post_id')->nullable();
-            $table->unsignedBigInteger('album_id')->nullable();
+            $table->unsignedBigInteger('product_id')->nullable();
+            $table->unsignedBigInteger('section_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
@@ -26,9 +27,9 @@ class CreateAlbumsTable extends Migration
                 ->references("id")
                 ->on("posts");
 
-            $table->foreign("album_id")
+            $table->foreign("product_id")
                 ->references("id")
-                ->on("albums");
+                ->on("products");
         });
     }
 

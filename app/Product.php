@@ -23,6 +23,6 @@ class Product extends Model
     ];
 
     public function album() {
-        return $this->hasMany("Album");
+        return $this->hasMany("App\Album");
     }
 }

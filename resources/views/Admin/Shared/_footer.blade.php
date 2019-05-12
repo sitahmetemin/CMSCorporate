@@ -91,6 +91,10 @@
 <!-- custom js -->
 <script type="text/javascript" src="/admin/assets/pages/dashboard/analytic-dashboard.js"></script>
 <script type="text/javascript" src="/admin/assets/js/script.js "></script>
+{{--Core JS--}}
+<script src="/admin/assets/core.js"></script>
+
+@yield('js')
 </body>
 
 </html>

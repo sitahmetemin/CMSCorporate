@@ -15,16 +15,22 @@ class Album extends Model
         "path",
         "order",
         "post_id",
-        "album_id",
+        "product_id",
+        "section_id",
     ];
 
     public function post()
     {
-        return $this->belongsTo('Post');
+        return $this->belongsTo('App\Post');
     }
 
     public function product()
     {
-        return $this->belongsTo('Product');
+        return $this->belongsTo('App\Product');
+    }
+
+    public function section()
+    {
+        return $this->belongsTo('App\Section');
     }
 }
