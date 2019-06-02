@@ -461,6 +461,19 @@
 @endsection
 
 @section('js')
+    <script type="text/javascript" src="/admin/assets/pages/dashboard/analytic-dashboard.js"></script>
+
+    <!-- Chart js -->
+    <script type="text/javascript" src="/admin/bower_components/chart.js/js/Chart.js"></script>
+    <!-- amchart js -->
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="/admin/assets/pages/widget/amchart/gauge.js"></script>
+    <script src="/admin/assets/pages/widget/amchart/serial.js"></script>
+    <script src="/admin/assets/pages/widget/amchart/light.js"></script>
+    <script src="/admin/assets/pages/widget/amchart/pie.min.js"></script>
+    <script src="/admin/assets/pages/widget/amchart/ammap.min.js"></script>
+    <script src="/admin/assets/pages/widget/amchart/usaLow.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
     <script>
 
     </script>
