@@ -11,6 +11,9 @@
             <div class="card-header">
                 <h5>Menüler</h5>
                 <span>Web Sitenizde içerikleri kategorize edebilmeniz ve yayınlayabilmeniz için hazırlanmış bölümdür.</span>
+                    <a class="position-absolute create-btn btn btn-primary btn-icon waves-effect" href="/admin/menus/create">
+                        <i class="fa fa-plus"></i>
+                    </a>
             </div>
             <div class="card-block">
                 <div class="dt-responsive table-responsive">
@@ -21,6 +24,7 @@
                             <th>Ad</th>
                             <th>Tip</th>
                             <th>Statü</th>
+                            <th>Bağlı Menü</th>
                             <th>Son Güncelleme</th>
                             <th>İşlemler</th>
                         </tr>
@@ -31,6 +35,7 @@
                             <th>Ad</th>
                             <th>Tip</th>
                             <th>Statü</th>
+                            <th>Bağlı Menü</th>
                             <th>Son Güncelleme</th>
                             <th>İşlemler</th>
                         </tr>
@@ -39,21 +44,26 @@
                         @foreach($menus as $menu)
                             <tr>
                                 <td>{{ $menu->id }}</td>
-                                <td>{{ $menu->name }}</td>
+                                <td>{!! $menu->name . " <label class='label label-primary'>(İçerik adedi: " . $menu->post->count() . " )</label>" !!}</td>
                                 <td>{{ $menu->type }}</td>
-                                <td><span class="label label-{{ $menu->status ==  "active" ? "success" : "danger"  }}">{{ $menu->status == "active" ? "Aktif" : "Pasif"  }}</span></td>
-                                <td>{{ $menu->updated_at }}</td>
                                 <td>
-                                    <a href="" class="btn btn-outline-primary waves-effect btn-icon" data-toggle="tooltip" data-placement="right" title="Düzenle">
+                                    <span class="label label-{{ $menu->status ==  "active" ? "success" : "danger"  }}">{{ $menu->status == "active" ? "Aktif" : "Pasif"  }}</span>
+                                </td>
+                                <td>
+                                    {{ !empty($menu->parent->name) ? $menu->parent->name : "Yok" }}
+                                </td>
+                                <td>{{ $menu->updated_at }}</td>
+                                <td align="center" width="200" >
+                                    <button href="" class="btn btn-outline-primary waves-effect btn-icon" title="Düzenle">
                                         <i class="fa fa-edit"></i>
-                                    </a> -
-                                    <a href="" class="btn btn-outline-warning btn-icon waves-effect " data-toggle="tooltip" data-placement="right" title="Kilitle">
+                                    </button>
+                                    <a href="" class="btn btn-outline-warning btn-icon waves-effect " title="Kilitle">
                                         <i class="fa fa-lock"></i>
-                                    </a> -
-                                    <a href="" class="btn btn-outline-info btn-icon  waves-effect" data-toggle="tooltip" data-placement="right" title="Sırala">
+                                    </a>
+                                    <a href="" class="btn btn-outline-info btn-icon  waves-effect" title="Sırala">
                                         <i class="fa fa-list"></i>
-                                    </a> -
-                                    <a href="" class="btn btn-outline-danger btn-icon waves-effect" data-toggle="tooltip" data-placement="right" title="Sil">
+                                    </a>
+                                    <a href="" class="btn btn-outline-danger btn-icon waves-effect" title="Sil">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </td>

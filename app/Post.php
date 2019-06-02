@@ -32,7 +32,7 @@ class Post extends Model
 
     public function menu()
     {
-        return $this->hasOne('App\Menu');
+        return $this->belongsTo('App\Menu');
     }
 
     public function album()

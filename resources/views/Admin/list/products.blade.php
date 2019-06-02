@@ -43,11 +43,17 @@
                         <tbody>
                         @foreach($menus as $menu)
                             <tr>
-                                <td>{{ $menu->id }}</td>
-                                <td>{!! $menu->name . " <label class='label label-primary'>(İçerik adedi: " . $menu->post->count() . " )</label>" !!}</td>
+                                <td>
+                                    {{ $menu->id }}
+                                </td>
+                                <td>
+                                    {!! $menu->name . " <label class='label label-primary'>(İçerik adedi: " . $menu->post->count() . " )</label>" !!}
+                                </td>
                                 <td>{{ $menu->type }}</td>
                                 <td>
-                                    <span class="label label-{{ $menu->status ==  "active" ? "success" : "danger"  }}">{{ $menu->status == "active" ? "Aktif" : "Pasif"  }}</span>
+                                    <span class="label label-{{ $menu->status ==  "active" ? "success" : "danger"  }}">
+                                        {{ $menu->status == "active" ? "Aktif" : "Pasif"  }}
+                                    </span>
                                 </td>
                                 <td>
                                     {{ !empty($menu->parent->name) ? $menu->parent->name : "Yok" }}

@@ -9,30 +9,10 @@ class AdminMenuController extends Controller
 {
 	public function index()
 	{
-//		$allMenu = Menu::all();
-//		$treeMenu = [];
-//		foreach ($allMenu as $oneMenu) {
-//			if (empty($oneMenu->parent_id)) {
-//				$treeMenu[] = $this->recMenu($oneMenu, $allMenu);
-//			}
-//		}
-
 		return view("Admin.list.menus", [
-			"menus" => Menu::all()
+			"menus" => Menu::withCount('post')->get()
 		]);
 	}
-
-//	private function recMenu($receivedMenu, $allMenu){
-//		$menuSend = [];
-//
-////		Todo: Burada Kaldın;
-//		if (!empty($receivedMenu->parent_id)){
-//
-//		}else {
-//
-//		}
-//
-//	}
 
 	public function create()
 	{

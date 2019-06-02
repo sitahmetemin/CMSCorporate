@@ -30,11 +30,16 @@ class Menu extends Model
 
     public function parent()
     {
-        return $this->belongsTo('App\Menu', 'parent_id');
+        return $this->belongsTo('App\Menu' ,"parent_id");
     }
 
     public function section()
     {
-        return $this->hasMany('App\Menu');
+        return $this->hasMany('App\Section');
     }
+
+	public function post()
+	{
+		return $this->hasMany('App\Post');
+	}
 }

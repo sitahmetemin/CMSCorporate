@@ -12,7 +12,7 @@
                 <ul>
                     <li class="more-details">
                         <a href="user-profile.html"><i class="ti-user"></i>Profili Görüntüle</a>
-                        <a href="#!"><i class="ti-settings"></i>Ayarlar</a>
+                        <a href="/admin/settings"><i class="ti-settings"></i>Ayarlar</a>
                         <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Çıkış Yap</a>
                     </li>
                 </ul>

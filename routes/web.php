@@ -11,25 +11,45 @@ Route::prefix('admin')->group(function () {
     Route::get('/home', 'AdminHomeController@index');
 
 //    -------------------------------------------------------------List
-    Route::get('/posts', 'AdminHomeController@index');
-    Route::get('/products', 'AdminHomeController@index');
+    Route::get('/posts', 'AdminPostController@index');
+    Route::get('/products', 'AdminProductController@index');
     Route::get('/menus', 'AdminMenuController@index');
-    Route::get('/users', 'AdminHomeController@index');
-    Route::get('/slider', 'AdminHomeController@index');
+    Route::get('/users', 'AdminUserController@index');
+    Route::get('/slider', 'AdminSliderController@index');
 
-//    --------------------------------------------------------------Create
-    Route::get('/posts/create', 'AdminHomeController@index');
-    Route::get('/products/create', 'AdminHomeController@index');
-    Route::get('/menus/create', 'AdminHomeController@index');
-    Route::get('/users/create', 'AdminHomeController@index');
-    Route::get('/slider/create', 'AdminHomeController@index');
+//    --------------------------------------------------------------Create Page
+	Route::get('/menus/create', 'AdminMenuController@create');
+	Route::get('/posts/create', 'AdminPostController@create');
+    Route::get('/products/create', 'AdminProductController@create');
+    Route::get('/users/create', 'AdminUserController@create');
+    Route::get('/slider/create', 'AdminSliderController@create');
 
-//    --------------------------------------------------------------Edit
-    Route::get('/posts/edit/{id}', 'AdminHomeController@index');
-    Route::get('/products/edit/{id}', 'AdminHomeController@index');
-    Route::get('/menus/edit/{id}', 'AdminHomeController@index');
-    Route::get('/users/edit/{id}', 'AdminHomeController@index');
-    Route::get('/slider/edit/{id}', 'AdminHomeController@index');
+//    --------------------------------------------------------------Store
+	Route::post('/menus/create', 'AdminMenuController@store');
+	Route::post('/posts/create', 'AdminPostController@store');
+	Route::post('/products/create', 'AdminProductController@store');
+	Route::post('/users/create', 'AdminUserController@store');
+	Route::post('/slider/create', 'AdminSliderController@store');
+
+//    --------------------------------------------------------------Edit Page
+	Route::get('/menus/edit/{id}', 'AdminMenuController@edit');
+	Route::get('/posts/edit/{id}', 'AdminPostController@edit');
+    Route::get('/products/edit/{id}', 'AdminProductController@edit');
+    Route::get('/users/edit/{id}', 'AdminUserController@edit');
+    Route::get('/slider/edit/{id}', 'AdminSliderController@edit');
+
+//    --------------------------------------------------------------Update
+	Route::post('/menus/edit/{id}', 'AdminMenuController@update');
+	Route::post('/posts/edit/{id}', 'AdminPostController@update');
+	Route::post('/products/edit/{id}', 'AdminProductController@update');
+	Route::post('/users/edit/{id}', 'AdminUserController@update');
+	Route::post('/slider/edit/{id}', 'AdminSliderController@update');
+
+	Route::get('/settings', 'AdminSettingController@index');
+	Route::post('/settings/site', 'AdminSettingController@updateSite');
+	Route::post('/settings/social', 'AdminSettingController@updateSocial');
+	Route::post('/settings/contact', 'AdminSettingController@updateContact');
+
 });
 
 Route::get('/', 'UIController@index')->name('home');

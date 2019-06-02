@@ -37,7 +37,7 @@ class CreateSettingsTable extends Migration
             $table->string('adres')->nullable();
             $table->string('ilce')->nullable();
             $table->string('il')->nullable();
-            $table->text('map')->nullable();
+            $table->text('maps')->nullable();
             $table->string('analystic')->nullable();
             $table->string('recapctha')->nullable();
             $table->string('smtphost')->nullable();

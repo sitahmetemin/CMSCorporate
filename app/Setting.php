@@ -29,7 +29,7 @@ class Setting extends Model
         'adres',
         'ilce',
         'il',
-        'map',
+        'maps',
         'analystic',
         'recapctha',
         'smtphost',

@@ -206,8 +206,8 @@
                             </a>
                             <ul class="show-notification profile-notification">
                                 <li class="waves-effect waves-light">
-                                    <a href="#!">
-                                        <i class="ti-settings"></i> Settings
+                                    <a href="/admin/settings">
+                                        <i class="ti-settings"></i> Ayarlar
                                     </a>
                                 </li>
                                 <li class="waves-effect waves-light">
