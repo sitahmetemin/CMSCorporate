@@ -45,6 +45,7 @@ Route::prefix('admin')->group(function () {
 	Route::post('/users/edit/{id}', 'AdminUserController@update');
 	Route::post('/slider/edit/{id}', 'AdminSliderController@update');
 
+//    --------------------------------------------------------------Settings
 	Route::get('/settings', 'AdminSettingController@index');
 	Route::post('/settings/site', 'AdminSettingController@updateSite');
 	Route::post('/settings/social', 'AdminSettingController@updateSocial');

@@ -13,9 +13,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Gradient Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-    <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
-    <meta name="author" content="Phoenixcoded" />
+    <meta name="description" content="Laravel kurumsal CMS" />
+    <meta name="keywords" content="Kurumsal CMS" />
+    <meta name="author" content="Ahmet Emin ŞİT" />
     <!-- Favicon icon -->
     <link rel="icon" href="/admin/assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->

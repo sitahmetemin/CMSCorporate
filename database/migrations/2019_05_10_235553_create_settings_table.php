@@ -22,7 +22,7 @@ class CreateSettingsTable extends Migration
             $table->string('description');
             $table->string('keywords');
             $table->string('copyright');
-            $table->string('site_url');
+            $table->string('url');
             $table->string('slogan')->nullable();
             $table->string('logo')->nullable();
             $table->string('lang')->nullable();
@@ -34,9 +34,9 @@ class CreateSettingsTable extends Migration
             $table->string('fax2')->nullable();
             $table->string('mail1')->nullable();
             $table->string('mail2')->nullable();
-            $table->string('adres')->nullable();
-            $table->string('ilce')->nullable();
-            $table->string('il')->nullable();
+            $table->string('address')->nullable();
+            $table->string('county')->nullable();
+            $table->string('province')->nullable();
             $table->text('maps')->nullable();
             $table->string('analystic')->nullable();
             $table->string('recapctha')->nullable();

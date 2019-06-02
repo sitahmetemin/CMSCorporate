@@ -5,6 +5,16 @@
 
 @section('content')
 
+    @if (session('status'))
+        <div class="col-12">
+            <div class="alert alert-{{ session('status') == "success" ? "success" : "danger" }} background-{{ session('status') == "success" ? "success" : "danger" }}">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="icofont icofont-close-line-circled text-white"></i>
+                </button>
+                <strong>{{ session('status') == "success" ? "İşlem Başarılı" : session('status') }}</strong>
+            </div>
+        </div>
+    @endif
     <div class="col-sm-12">
         <div class="card">
             <div class="card-header">
@@ -45,6 +55,7 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="site" role="tabpanel" aria-labelledby="home-tab">
                         <form class="form-material" action="/admin/settings/site" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="row mt-4">
                                 <div class="col-4">
                                     <div class="form-group form-success">
@@ -69,9 +80,9 @@
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group form-success">
-                                        <input type="text" name="site_url" class="form-control" value="{{ $setting->site_url }}" maxlength="191">
+                                        <input type="text" name="url" class="form-control" value="{{ $setting->url }}" maxlength="191">
                                         <span class="form-bar"></span>
-                                        <label class="float-label">site_url</label>
+                                        <label class="float-label">url</label>
                                     </div>
                                 </div>
                                 <div class="col-8">
@@ -114,16 +125,16 @@
                                 <div class="col-4">
                                     <div class="form-group form-success">
                                         <h4 class="sub-title">Çok Yakında Sayfası</h4>
-                                        <select name="select" class="form-control form-control-default">
-                                            <option value="1">Aktif</option>
-                                            <option selected value="0">Pasif</option>
+                                        <select name="isComingSoon" class="form-control form-control-default">
+                                            <option {{ $setting->isComingSoon == 1 ? 'selected' : null }} value="1">Aktif</option>
+                                            <option {{ $setting->isComingSoon == 0 ? 'selected' : null }} value="0">Pasif</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group form-success">
                                         <h4 class="sub-title">Varsayılan Menü</h4>
-                                        <select name="select" class="form-control form-control-default">
+                                        <select name="menu_id" class="form-control form-control-default">
                                             <option value="1">Aktif</option>
                                             <option selected value="0">Pasif</option>
                                         </select>
@@ -132,7 +143,7 @@
                                 <div class="col-4">
                                     <div class="form-group form-success">
                                         <h4 class="sub-title">Varsayılan Slider</h4>
-                                        <select name="select" class="form-control form-control-default">
+                                        <select name="slider_id" class="form-control form-control-default">
                                             <option value="1">Aktif</option>
                                             <option selected value="0">Pasif</option>
                                         </select>
@@ -165,6 +176,7 @@
                     </div>
                     <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="profile-tab">
                         <form class="form-material" action="/admin/settings/social" method="post" >
+                            @csrf
                             <div class="row mt-4">
                                 <div class="col-4">
                                     <div class="form-group form-success">
@@ -237,6 +249,7 @@
                     </div>
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                         <form class="form-material" action="/admin/settings/contact" method="post" >
+                            @csrf
                             <div class="row mt-4">
                                 <div class="col-4">
                                     <div class="form-group form-success">
@@ -296,23 +309,23 @@
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group form-success">
-                                        <input type="text" name="adres" class="form-control" value="{{ $setting->adres }}" maxlength="191">
+                                        <input type="text" name="address" class="form-control" value="{{ $setting->address }}" maxlength="191">
                                         <span class="form-bar"></span>
-                                        <label class="float-label">adres</label>
+                                        <label class="float-label">address</label>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group form-success">
-                                        <input type="text" name="ilce" class="form-control" value="{{ $setting->ilce }}" maxlength="191">
+                                        <input type="text" name="county" class="form-control" value="{{ $setting->county }}" maxlength="191">
                                         <span class="form-bar"></span>
-                                        <label class="float-label">ilce</label>
+                                        <label class="float-label">county</label>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group form-success">
-                                        <input type="text" name="il" class="form-control" value="{{ $setting->il }}" maxlength="191">
+                                        <input type="text" name="il" class="form-control" value="{{ $setting->province }}" maxlength="191">
                                         <span class="form-bar"></span>
-                                        <label class="float-label">il</label>
+                                        <label class="float-label">province</label>
                                     </div>
                                 </div>
                             </div>
@@ -338,12 +351,23 @@
 @endsection
 
 @section('css')
-    <style>
 
+    <!-- Tags css -->
+    <link rel="stylesheet" type="text/css" href="/admin/bower_components/bootstrap-tagsinput/css/bootstrap-tagsinput.css" />
+
+    <style>
+        .bootstrap-tagsinput{
+            width: 100%;
+        }
     </style>
+
 @endsection
 
 @section('js')
+
+    <!-- Tags js -->
+    <script type="text/javascript" src="/admin/bower_components/bootstrap-tagsinput/js/bootstrap-tagsinput.js"></script>
+
     <script>
 
     </script>
