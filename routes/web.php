@@ -25,11 +25,11 @@ Route::prefix('admin')->group(function () {
     Route::get('/slider/create', 'AdminSliderController@create');
 
 //    --------------------------------------------------------------Store
-	Route::post('/menus/create', 'AdminMenuController@store');
-	Route::post('/posts/create', 'AdminPostController@store');
-	Route::post('/products/create', 'AdminProductController@store');
-	Route::post('/users/create', 'AdminUserController@store');
-	Route::post('/slider/create', 'AdminSliderController@store');
+	Route::post('/menus/store', 'AdminMenuController@store');
+	Route::post('/posts/store', 'AdminPostController@store');
+	Route::post('/products/store', 'AdminProductController@store');
+	Route::post('/users/store', 'AdminUserController@store');
+	Route::post('/slider/store', 'AdminSliderController@store');
 
 //    --------------------------------------------------------------Edit Page
 	Route::get('/menus/edit/{id}', 'AdminMenuController@edit');
@@ -44,6 +44,13 @@ Route::prefix('admin')->group(function () {
 	Route::post('/products/edit/{id}', 'AdminProductController@update');
 	Route::post('/users/edit/{id}', 'AdminUserController@update');
 	Route::post('/slider/edit/{id}', 'AdminSliderController@update');
+
+//    ---------------------------------------------------------------Delete
+    Route::get('/menus/delete/{id}', 'AdminMenuController@destroy');
+    Route::get('/posts/delete/{id}', 'AdminPostController@destroy');
+    Route::get('/products/delete/{id}', 'AdminProductController@destroy');
+    Route::get('/users/delete/{id}', 'AdminUserController@destroy');
+    Route::get('/slider/delete/{id}', 'AdminSliderController@destroy');
 
 //    --------------------------------------------------------------Settings
 	Route::get('/settings', 'AdminSettingController@index');

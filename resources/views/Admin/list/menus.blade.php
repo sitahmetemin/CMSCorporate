@@ -5,6 +5,18 @@
 
 
 @section('content')
+
+    @if (session('status'))
+        <div class="col-12">
+            <div class="alert alert-{{ session('status') == "success" ? "success" : "danger" }} background-{{ session('status') == "success" ? "success" : "danger" }}">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="icofont icofont-close-line-circled text-white"></i>
+                </button>
+                <strong>{{ session('status') == "success" ? "İşlem Başarılı" : session('status') }}</strong>
+            </div>
+        </div>
+    @endif
+
     <div class="col-12">
         <!-- Default ordering table start -->
         <div class="card">
@@ -54,16 +66,13 @@
                                 </td>
                                 <td>{{ $menu->updated_at }}</td>
                                 <td align="center" width="200" >
-                                    <button href="" class="btn btn-outline-primary waves-effect btn-icon" title="Düzenle">
+                                    <a href="/admin/menus/edit/{{ $menu->id  }}" class="btn btn-outline-primary waves-effect btn-icon" title="Düzenle">
                                         <i class="fa fa-edit"></i>
-                                    </button>
-                                    <a href="" class="btn btn-outline-warning btn-icon waves-effect " title="Kilitle">
-                                        <i class="fa fa-lock"></i>
                                     </a>
                                     <a href="" class="btn btn-outline-info btn-icon  waves-effect" title="Sırala">
                                         <i class="fa fa-list"></i>
                                     </a>
-                                    <a href="" class="btn btn-outline-danger btn-icon waves-effect" title="Sil">
+                                    <a href="/admin/menus/delete/{{ $menu->id  }}" class="btn btn-outline-danger btn-icon waves-effect" title="Sil">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </td>

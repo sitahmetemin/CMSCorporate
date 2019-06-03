@@ -5,12 +5,23 @@
 
 
 @section('content')
+    @if (session('status'))
+        <div class="col-12">
+            <div class="alert alert-{{ session('status') == "success" ? "success" : "danger" }} background-{{ session('status') == "success" ? "success" : "danger" }}">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="icofont icofont-close-line-circled text-white"></i>
+                </button>
+                <strong>{{ session('status') == "success" ? "İşlem Başarılı" : session('status') }}</strong>
+            </div>
+        </div>
+    @endif
+
     <div class="col-12">
         <!-- Default ordering table start -->
         <div class="card">
             <div class="card-header">
-                <h5>Menüler</h5>
-                <span>Web Sitenizde içerikleri kategorize edebilmeniz ve yayınlayabilmeniz için hazırlanmış bölümdür.</span>
+                <h5>İçerikler</h5>
+                <span>Web Sitenizde içerikleri yayınlayabilmeniz için hazırlanmış bölümdür.</span>
                     <a class="position-absolute create-btn btn btn-primary btn-icon waves-effect" href="/admin/menus/create">
                         <i class="fa fa-plus"></i>
                     </a>
@@ -41,18 +52,18 @@
                         </tr>
                         </tfoot>
                         <tbody>
-                        @foreach($menus as $menu)
+                        @foreach($posts as $post)
                             <tr>
-                                <td>{{ $menu->id }}</td>
-                                <td>{!! $menu->name . " <label class='label label-primary'>(İçerik adedi: " . $menu->post->count() . " )</label>" !!}</td>
-                                <td>{{ $menu->type }}</td>
+                                <td>{{ $post->id }}</td>
+                                <td>{!! $post->name . " <label class='label label-primary'>(İçerik adedi: " . $post->post->count() . " )</label>" !!}</td>
+                                <td>{{ $post->type }}</td>
                                 <td>
-                                    <span class="label label-{{ $menu->status ==  "active" ? "success" : "danger"  }}">{{ $menu->status == "active" ? "Aktif" : "Pasif"  }}</span>
+                                    <span class="label label-{{ $post->status ==  "active" ? "success" : "danger"  }}">{{ $post->status == "active" ? "Aktif" : "Pasif"  }}</span>
                                 </td>
                                 <td>
-                                    {{ !empty($menu->parent->name) ? $menu->parent->name : "Yok" }}
+                                    {{ !empty($post->parent->name) ? $post->parent->name : "Yok" }}
                                 </td>
-                                <td>{{ $menu->updated_at }}</td>
+                                <td>{{ $post->updated_at }}</td>
                                 <td align="center" width="200" >
                                     <button href="" class="btn btn-outline-primary waves-effect btn-icon" title="Düzenle">
                                         <i class="fa fa-edit"></i>

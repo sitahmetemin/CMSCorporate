@@ -122,7 +122,7 @@
                         </div>
                     </div>
                     <a href="index.html">
-                        <img class="img-fluid" src="/admin/assets/images/logo.png" alt="Theme-Logo" />
+                        <img class="img-fluid" src="/admin/assets/images/logo.png" alt="Kurumsal CMS" />
                     </a>
                     <a class="mobile-options waves-effect waves-light">
                         <i class="ti-more"></i>

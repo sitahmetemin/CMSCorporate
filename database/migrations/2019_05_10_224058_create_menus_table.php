@@ -16,12 +16,11 @@ class CreateMenusTable extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('icon')->nullable();
             $table->string('cover')->nullable();
-            $table->enum('type', ["menu_list", "blog_list", "product_list", "content"]);
-            $table->enum('status', ["active", "passive"]);
-            $table->enum('lock', ["locked", "unlocked"]);
+            $table->enum('type', ["menu_list", "blog_list", "product_list", "content"])->default('menu_list');
+            $table->enum('status', ["active", "passive"])->default('active');
             $table->integer('order')->nullable();
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->timestamps();

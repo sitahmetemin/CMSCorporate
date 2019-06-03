@@ -56,14 +56,14 @@
                 </a>
             </li>
             <li class="">
-                <a href="/admin/comments" class="waves-effect waves-dark">
+                <a href="/admin/sections" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="ti-layout-accordion-merged"></i><b>M</b></span>
                     <span class="pcoded-mtext">Site Bölümleri</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
             {{-- Dropdown --}}
-            <li class="pcoded-hasmenu active pcoded-trigger">
+            {{--<li class="pcoded-hasmenu active pcoded-trigger">
                 <a href="javascript:void(0)" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                     <span class="pcoded-mtext">Dashboard</span>
@@ -107,7 +107,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li>--}}
             {{-- Dropdown --}}
         </ul>
     </div>
