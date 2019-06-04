@@ -23,7 +23,7 @@
             <div class="card-header">
                 <h5>Menüler</h5>
                 <span>Web Sitenizde içerikleri kategorize edebilmeniz ve yayınlayabilmeniz için hazırlanmış bölümdür.</span>
-                    <a class="position-absolute create-btn btn btn-primary btn-icon waves-effect" href="/admin/menus/create">
+                    <a class="position-absolute create-btn btn btn-success btn-icon waves-effect" href="/admin/menus/create">
                         <i class="fa fa-plus"></i>
                     </a>
             </div>

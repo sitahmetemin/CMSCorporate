@@ -22,7 +22,7 @@
             <div class="card-header">
                 <h5>İçerikler</h5>
                 <span>Web Sitenizde içerikleri yayınlayabilmeniz için hazırlanmış bölümdür.</span>
-                    <a class="position-absolute create-btn btn btn-primary btn-icon waves-effect" href="/admin/menus/create">
+                    <a class="position-absolute create-btn btn btn-success btn-icon waves-effect" href="/admin/posts/create">
                         <i class="fa fa-plus"></i>
                     </a>
             </div>

@@ -24,16 +24,16 @@
                         </div>
                         <div class="col-4">
                             <div class="form-group form-success">
-                                <input name="icon" id="iconPicker" class="form-control" type="text">
+                                <input type="text" name="slug" class="form-control" maxlength="191">
                                 <span class="form-bar"></span>
-                                <label class="float-label">icon</label>
+                                <label class="float-label">URL</label>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="form-group form-success">
-                                <input type="file" name="cover" class="form-control" data-role="tagsinput" maxlength="191">
+                                <input name="icon" id="iconPicker" class="form-control" type="text">
                                 <span class="form-bar"></span>
-                                <label class="float-label">kapak</label>
+                                <label class="float-label">icon</label>
                             </div>
                         </div>
                         <div class="col-4">
@@ -65,6 +65,13 @@
                                     <option selected value="active">Aktif</option>
                                     <option value="passive">Pasif</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group form-success">
+                                <input type="file" name="cover" class="form-control" data-role="tagsinput" maxlength="191">
+                                <span class="form-bar"></span>
+                                <label class="float-label">kapak</label>
                             </div>
                         </div>
                     </div>

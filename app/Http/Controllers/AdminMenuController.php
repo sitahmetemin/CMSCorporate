@@ -24,8 +24,12 @@ class AdminMenuController extends Controller
 
     public function store(Request $request)
     {
-        $request->merge(['slug' => Str::slug( $request->name, '-')]);
         try {
+
+            if (empty($request->slug)) {
+                $request->merge(['slug' => Str::slug($request->name, '-')]);
+            }
+
 
             Menu::create($request->except('_token'));
             return redirect('/admin/menus')->with('status', 'success');
@@ -46,7 +50,7 @@ class AdminMenuController extends Controller
                 'menus' => $menus,
             ]);
 
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
 
             return redirect('/admin/menus')->with('status', $e);
         }
@@ -55,7 +59,9 @@ class AdminMenuController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $request->merge(['slug' => Str::slug( $request->name, '-')]);
+            if (empty($request->slug)) {
+                $request->merge(['slug' => Str::slug($request->name, '-')]);
+            }
 
             $foundMenu = Menu::find($id);
             $foundMenu->fill($request->except('_token'));
@@ -75,7 +81,7 @@ class AdminMenuController extends Controller
             Menu::find($id)->delete();
             return redirect('/admin/menus')->with('status', 'success');
 
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
 
             return redirect('/admin/menus')->with('status', $e);
         }
