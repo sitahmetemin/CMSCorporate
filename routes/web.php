@@ -12,6 +12,7 @@ Route::prefix('admin')->group(function () {
 
 //    -------------------------------------------------------------List
     Route::get('/posts', 'AdminPostController@index');
+    Route::get('/posts/deleted', 'AdminPostController@getDeletedList');
     Route::get('/products', 'AdminProductController@index');
     Route::get('/menus', 'AdminMenuController@index');
     Route::get('/users', 'AdminUserController@index');
@@ -45,9 +46,14 @@ Route::prefix('admin')->group(function () {
 	Route::post('/users/edit/{id}', 'AdminUserController@update');
 	Route::post('/slider/edit/{id}', 'AdminSliderController@update');
 
+//    ---------------------------------------------------------------Copy
+    Route::get('/posts/copy/{id}', 'AdminPostController@copyItem');
+
+
 //    ---------------------------------------------------------------Delete
     Route::get('/menus/delete/{id}', 'AdminMenuController@destroy');
     Route::get('/posts/delete/{id}', 'AdminPostController@destroy');
+    Route::get('/posts/hardDelete/{id}', 'AdminPostController@hardDelete');
     Route::get('/products/delete/{id}', 'AdminProductController@destroy');
     Route::get('/users/delete/{id}', 'AdminUserController@destroy');
     Route::get('/slider/delete/{id}', 'AdminSliderController@destroy');

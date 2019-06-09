@@ -42,16 +42,16 @@
                 </a>
             </li>
             <li class="">
-                <a href="/admin/products" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="ti-layout-grid3"></i><b>M</b></span>
-                    <span class="pcoded-mtext">Ürünler</span>
+                <a href="/admin/comments" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-comments"></i><b>M</b></span>
+                    <span class="pcoded-mtext">Yorumlar</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
             <li class="">
-                <a href="/admin/comments" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="ti-comments"></i><b>M</b></span>
-                    <span class="pcoded-mtext">Yorumlar</span>
+                <a href="/admin/products" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-layout-grid3"></i><b>M</b></span>
+                    <span class="pcoded-mtext">Ürünler</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>

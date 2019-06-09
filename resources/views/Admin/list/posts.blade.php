@@ -1,7 +1,7 @@
 @extends('Admin.Shared.layout')
 
-@section('title', 'Menuler')
-@section('titleDescription', 'Menü ile alakalı işlemlerinizi buradan yapabilirsiniz.')
+@section('title', 'İçerikler')
+@section('titleDescription', 'İçeriklerle ile alakalı işlemlerinizi buradan yapabilirsiniz.')
 
 
 @section('content')
@@ -22,9 +22,14 @@
             <div class="card-header">
                 <h5>İçerikler</h5>
                 <span>Web Sitenizde içerikleri yayınlayabilmeniz için hazırlanmış bölümdür.</span>
-                    <a class="position-absolute create-btn btn btn-success btn-icon waves-effect" href="/admin/posts/create">
+                <div class="position-absolute create-btn">
+                    <a class=" btn btn-success btn-icon waves-effect" href="/admin/posts/create" title="Ekle">
                         <i class="fa fa-plus"></i>
                     </a>
+                    <a class=" btn btn-primary btn-icon waves-effect" href="/admin/posts/deleted" title="Silinenler">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </div>
             </div>
             <div class="card-block">
                 <div class="dt-responsive table-responsive">
@@ -55,7 +60,7 @@
                         @foreach($posts as $post)
                             <tr>
                                 <td>{{ $post->id }}</td>
-                                <td>{!! $post->name . " <label class='label label-primary'>(İçerik adedi: " . $post->post->count() . " )</label>" !!}</td>
+                                <td>{!! $post->name !!}</td>
                                 <td>{{ $post->type }}</td>
                                 <td>
                                     <span class="label label-{{ $post->status ==  "active" ? "success" : "danger"  }}">{{ $post->status == "active" ? "Aktif" : "Pasif"  }}</span>
@@ -65,17 +70,18 @@
                                 </td>
                                 <td>{{ $post->updated_at }}</td>
                                 <td align="center" width="200" >
-                                    <button href="" class="btn btn-outline-primary waves-effect btn-icon" title="Düzenle">
+                                    <a href="/admin/posts/edit/{{ $post->id }}" class="btn btn-outline-primary waves-effect btn-icon" title="Düzenle">
                                         <i class="fa fa-edit"></i>
-                                    </button>
-                                    <a href="" class="btn btn-outline-warning btn-icon waves-effect " title="Kilitle">
-                                        <i class="fa fa-lock"></i>
                                     </a>
-                                    <a href="" class="btn btn-outline-info btn-icon  waves-effect" title="Sırala">
-                                        <i class="fa fa-list"></i>
+                                    <a href="/admin/posts/copy/{{ $post->id }}" class="btn btn-outline-secondary waves-effect btn-icon" title="Kopyala">
+                                        <i class="fa fa-copy"></i>
                                     </a>
-                                    <a href="" class="btn btn-outline-danger btn-icon waves-effect" title="Sil">
-                                        <i class="fa fa-trash"></i>
+                                    {{--todo: Burada Kaldın--}}
+                                    <a href="/admin/posts/comments/{{ $post->id }}" class="btn btn-outline-secondary waves-effect btn-icon" title="Yorumlar">
+                                        <i class="fa fa-comments-o"></i>
+                                    </a>
+                                    <a href="/admin/posts/delete/{{ $post->id }}" class="btn btn-outline-danger btn-icon waves-effect" title="Sil">
+                                        <i class="fa fa-trash-o"></i>
                                     </a>
                                 </td>
                             </tr>

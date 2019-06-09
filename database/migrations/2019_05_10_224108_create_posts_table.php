@@ -11,15 +11,15 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('desc');
-            $table->text('content');
+            $table->string('desc')->nullable();
+            $table->text('content')->nullable();
             $table->string('slug');
-            $table->string('video');
-            $table->string('cover');
+            $table->string('video')->nullable();
+            $table->string('cover')->nullable();
             $table->dateTime('startDate')->nullable();
             $table->dateTime('endDate')->nullable();
-            $table->enum('status', ["active", "passive"]);
-            $table->enum('type', ["content", "album", "contentWithAlbum"]);
+            $table->enum('status', ["active", "passive"])->default('active');
+            $table->enum('type', ["content", "album", "contentWithAlbum"])->default('content');
             $table->unsignedBigInteger("menu_id")->nullable();
             $table->unsignedBigInteger("user_id")->nullable();
             $table->timestamps();
