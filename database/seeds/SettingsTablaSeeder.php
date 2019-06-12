@@ -20,6 +20,7 @@ class SettingsTablaSeeder extends Seeder
 		    'description' => 'Ahmet Emin ŞİT Tarafından hazırlanmış Laravel İçerik Yönetim Sistemi',
 		    'copyright' => 'Tüm Hakları Ahmet Emin ŞİTe Aittir',
 		    'url' => 'http://localhost',
+		    'site_theme' => 'default',
 		    'slogan' => 'Laravel İle Tasarlanmış CMS',
 		    'lang' => 'tr',
 		    'tel1' => '02823398508',

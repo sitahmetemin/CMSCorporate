@@ -13,7 +13,7 @@
                     <li class="more-details">
                         <a href="user-profile.html"><i class="ti-user"></i>Profili Görüntüle</a>
                         <a href="/admin/settings"><i class="ti-settings"></i>Ayarlar</a>
-                        <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Çıkış Yap</a>
+                        <a href="/logout"><i class="ti-layout-sidebar-left"></i>Çıkış Yap</a>
                     </li>
                 </ul>
             </div>
@@ -30,35 +30,42 @@
             <li class="">
                 <a href="/admin/menus" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="ti-layers-alt"></i><b>M</b></span>
-                    <span class="pcoded-mtext">Menuler</span>
+                    <span class="pcoded-mtext">Menu Yönetimi</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
             <li class="">
                 <a href="/admin/posts" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="ti-layout-media-left"></i><b>M</b></span>
-                    <span class="pcoded-mtext">İçerikler</span>
+                    <span class="pcoded-mtext">İçerik Yönetimi</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
             <li class="">
                 <a href="/admin/comments" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="ti-comments"></i><b>M</b></span>
-                    <span class="pcoded-mtext">Yorumlar</span>
+                    <span class="pcoded-mtext">Yorum Yönetimi</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/admin/theme" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-wand"></i><b>M</b></span>
+                    <span class="pcoded-mtext">Tema Yönetimi</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
             <li class="">
                 <a href="/admin/products" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="ti-layout-grid3"></i><b>M</b></span>
-                    <span class="pcoded-mtext">Ürünler</span>
+                    <span class="pcoded-mtext">Ürün Yönetimi</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
             <li class="">
                 <a href="/admin/sections" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="ti-layout-accordion-merged"></i><b>M</b></span>
-                    <span class="pcoded-mtext">Site Bölümleri</span>
+                    <span class="pcoded-mtext">Site Bölüm Yönetimi</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>

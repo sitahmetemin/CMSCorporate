@@ -1,16 +1,16 @@
 <?php
 
-Route::get('/login', 'AdminAuthController@index');
-Route::post('/login', 'AdminAuthController@login');
-Route::get('/logout', 'AdminAuthController@logout');
+Route::get('/login', 'AdminAuthController@index')->name('login');
+Route::post('/login', 'AdminAuthController@check')->name('loginCheck');
+Route::get('/logout', 'AdminAuthController@logout')->name('logout');
 
-Route::prefix('admin')->group(function () {
+//Route::prefix('admin')->group(function () {
 //    Middleware auth control
-//Route::prefix('admin')->middleware(['auth'])->group(function () {
+Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     Route::get('/home', 'AdminHomeController@index');
 
-    Route::prefix('menus')->group(function (){
+    Route::prefix('menus')->group(function () {
         Route::get('/', 'AdminMenuController@index');
 
         Route::get('/create', 'AdminMenuController@create');
@@ -24,7 +24,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/edit/{id}', 'AdminMenuController@update');
     });
 
-    Route::prefix('posts')->group(function (){
+    Route::prefix('posts')->group(function () {
         Route::get('/', 'AdminPostController@index');
 
         Route::get('/deleted', 'AdminPostController@getDeletedList');
@@ -44,7 +44,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/edit/{id}', 'AdminPostController@update');
     });
 
-    Route::prefix('comments')->group(function (){
+    Route::prefix('comments')->group(function () {
         Route::get('/', 'AdminCommentController@index');
 
         Route::get('/deleted', 'AdminCommentController@getDeletedList');
@@ -56,7 +56,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/show/{id}', 'AdminCommentController@show');
     });
 
-    Route::prefix('products')->group(function (){
+    Route::prefix('products')->group(function () {
         Route::get('/', 'AdminProductController@index');
 
         Route::get('/create', 'AdminProductController@create');
@@ -70,7 +70,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/edit/{id}', 'AdminProductController@update');
     });
 
-    Route::prefix('users')->group(function (){
+    Route::prefix('users')->group(function () {
         Route::get('/', 'AdminUserController@index');
 
         Route::get('/create', 'AdminUserController@create');
@@ -85,22 +85,35 @@ Route::prefix('admin')->group(function () {
 
     });
 
-    Route::prefix('slider')->group(function (){
+    Route::prefix('slider')->group(function () {
         Route::get('/', 'AdminSliderController@index');
 
         Route::get('/create', 'AdminSliderController@create');
 
-        Route::post('/store', 'AdminSliderController@store');
-
         Route::get('/edit/{id}', 'AdminSliderController@edit');
-
-        Route::post('/edit/{id}', 'AdminSliderController@update');
 
         Route::get('/delete/{id}', 'AdminSliderController@destroy');
 
+        Route::post('/store', 'AdminSliderController@store');
+
+        Route::post('/edit/{id}', 'AdminSliderController@update');
     });
 
-    Route::prefix('settings')->group(function (){
+    Route::prefix('theme')->group(function () {
+        Route::get('/', 'AdminThemeController@index');
+
+        Route::get('/create', 'AdminThemeController@create');
+
+        Route::get('/edit/{id}', 'AdminThemeController@edit');
+
+        Route::get('/delete/{id}', 'AdminThemeController@destroy');
+
+        Route::post('/store', 'AdminThemeController@store');
+
+        Route::post('/edit/{id}', 'AdminThemeController@update');
+    });
+
+    Route::prefix('settings')->group(function () {
         Route::get('/', 'AdminSettingController@index');
         Route::post('/site', 'AdminSettingController@updateSite');
         Route::post('/social', 'AdminSettingController@updateSocial');

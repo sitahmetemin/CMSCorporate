@@ -21,6 +21,7 @@ class CreateSettingsTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('keywords');
+            $table->string('site_theme')->nullable();
             $table->string('copyright');
             $table->string('url');
             $table->string('slogan')->nullable();

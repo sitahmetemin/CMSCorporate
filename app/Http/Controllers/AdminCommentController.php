@@ -29,6 +29,13 @@ class AdminCommentController extends Controller
         //
     }
 
+    public function getDeletedList()
+    {
+        return view('Admin.list.comments-deleted', [
+            'comments' => Comment::all()
+        ]);
+    }
+
     public function edit($id)
     {
         //

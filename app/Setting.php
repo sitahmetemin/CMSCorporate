@@ -16,6 +16,7 @@ class Setting extends Model
         'copyright',
         'site_url',
         'slogan',
+        'site_theme',
         'logo',
         'defLang',
         'tel1',

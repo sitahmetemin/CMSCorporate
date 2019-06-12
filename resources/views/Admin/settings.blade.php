@@ -122,7 +122,7 @@
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <div class="col-4">
+                                <div class="col-3">
                                     <div class="form-group form-success">
                                         <h4 class="sub-title">Çok Yakında Sayfası</h4>
                                         <select name="isComingSoon" class="form-control form-control-default">
@@ -131,7 +131,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-3">
                                     <div class="form-group form-success">
                                         <h4 class="sub-title">Varsayılan Menü</h4>
                                         <select name="menu_id" class="form-control form-control-default">
@@ -140,7 +140,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-3">
                                     <div class="form-group form-success">
                                         <h4 class="sub-title">Varsayılan Slider</h4>
                                         <select name="slider_id" class="form-control form-control-default">
@@ -149,9 +149,17 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-3">
+                                    <div class="form-group form-success">
+                                        <h4 class="sub-title">Site Teması</h4>
+                                        <select name="site_theme" class="form-control form-control-default">
+                                            <option value="{{ $setting->site_theme }}">{{ $setting->site_theme }}</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row mt-3">
-                                <div class="col-11">
+                                <div class="col-10">
                                     <div class="form-group form-success">
                                         <input type="file" name="logo" class="form-control">
                                         <span class="form-bar"></span>

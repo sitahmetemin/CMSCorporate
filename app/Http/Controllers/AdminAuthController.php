@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminAuthController extends Controller
 {
     public function index()
     {
+        Auth::logout();
         return view('Admin.login');
     }
 
@@ -33,7 +35,7 @@ class AdminAuthController extends Controller
 
     public function logout()
     {
-        return view('Admin.login');
+        return $this->index();
     }
 
 }

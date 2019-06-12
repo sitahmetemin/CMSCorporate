@@ -1,7 +1,7 @@
 @extends('Admin.Shared.layout')
 
-@section('title', 'Yorumlar')
-@section('titleDescription', 'İçeriklere yapılan yorumlar ile alakalı işlemlerinizi buradan yapabilirsiniz.')
+@section('title', 'Silinen Yorumlar')
+@section('titleDescription', 'Silinen İçeriklere yapılan yorumlar ile alakalı işlemlerinizi buradan yapabilirsiniz.')
 
 
 @section('content')
@@ -20,8 +20,8 @@
         <!-- Default ordering table start -->
         <div class="card">
             <div class="card-header">
-                <h5>İçerik Yorumları</h5>
-                <span>Web Sitenizde içeriklere yapılan yorumlar yayınlayabilmeniz için hazırlanmış bölümdür.</span>
+                <h5>Silinen İçerik Yorumları</h5>
+                <span>Web Sitenizde Silinen  içeriklere yapılan yorumlar yayınlayabilmeniz için hazırlanmış bölümdür.</span>
                 <div class="position-absolute create-btn">
                     <a class=" btn btn-primary btn-icon waves-effect" href="/admin/comments/deleted" title="Silinen Yorumlar">
                         <i class="fa fa-trash-o"></i>
