@@ -136,6 +136,16 @@
                                     <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Giriş Yap</button>
                                 </div>
                             </div>
+                            @if (session('error'))
+                                <div class="col-12">
+                                    <div class="alert alert-danger background-danger">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="icofont icofont-close-line-circled text-white"></i>
+                                        </button>
+                                        <strong>{{ session('error') }}</strong>
+                                    </div>
+                                </div>
+                            @endif
                             <hr/>
                             <div class="row">
                                 <div class="col-md-10">

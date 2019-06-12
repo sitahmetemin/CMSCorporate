@@ -22,10 +22,10 @@ class AdminAuthController extends Controller
 //            kullanıcı aktif mi kontrol ediyoruz
             if (Auth::user()->isActive == 1) {
                 // Authentication passed...
-                return redirect()->intended('index');
+                return redirect()->intended('/admin/home');
             }
 
-            $this->logout();
+            $this->index();
 
         }
 
