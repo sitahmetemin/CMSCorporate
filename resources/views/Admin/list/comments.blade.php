@@ -1,7 +1,7 @@
 @extends('Admin.Shared.layout')
 
-@section('title', 'İçerikler')
-@section('titleDescription', 'İçeriklerle ile alakalı işlemlerinizi buradan yapabilirsiniz.')
+@section('title', 'Yorumlar')
+@section('titleDescription', 'İçeriklere yapılan yorumlar ile alakalı işlemlerinizi buradan yapabilirsiniz.')
 
 
 @section('content')
@@ -20,14 +20,11 @@
         <!-- Default ordering table start -->
         <div class="card">
             <div class="card-header">
-                <h5>İçerikler</h5>
-                <span>Web Sitenizde içerikleri yayınlayabilmeniz için hazırlanmış bölümdür.</span>
+                <h5>İçerik Yorumları</h5>
+                <span>Web Sitenizde içeriklere yapılan yorumlar yayınlayabilmeniz için hazırlanmış bölümdür.</span>
                 <div class="position-absolute create-btn">
-                    <a class=" btn btn-success btn-icon waves-effect" href="/admin/posts/create" title="Ekle">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                    <a class=" btn btn-primary btn-icon waves-effect" href="/admin/posts/deleted" title="Silinenler">
-                        <i class="fa fa-trash"></i>
+                    <a class=" btn btn-primary btn-icon waves-effect" href="/admin/comments/deleted" title="Silinen Yorumlar">
+                        <i class="fa fa-comments-o"></i>
                     </a>
                 </div>
             </div>
@@ -57,30 +54,23 @@
                         </tr>
                         </tfoot>
                         <tbody>
-                        @foreach($posts as $post)
+                        @foreach($comments as $comment)
                             <tr>
-                                <td>{{ $post->id }}</td>
-                                <td>{!! $post->name !!}</td>
-                                <td>{{ $post->type }}</td>
+                                <td>{{ $comment->id }}</td>
+                                <td>{!! $comment->name !!}</td>
+                                <td>{{ $comment->type }}</td>
                                 <td>
-                                    <span class="label label-{{ $post->status ==  "active" ? "success" : "danger"  }}">{{ $post->status == "active" ? "Aktif" : "Pasif"  }}</span>
+                                    <span class="label label-{{ $comment->status ==  "active" ? "success" : "danger"  }}">{{ $comment->status == "active" ? "Aktif" : "Pasif"  }}</span>
                                 </td>
                                 <td>
-                                    {{ !empty($post->menu->name) ? $post->menu->name : "Yok" }}
+                                    {{ !empty($comment->menu->name) ? $comment->menu->name : "Yok" }}
                                 </td>
-                                <td>{{ $post->updated_at }}</td>
+                                <td>{{ $comment->updated_at }}</td>
                                 <td align="center" width="200" >
-                                    <a href="/admin/posts/edit/{{ $post->id }}" class="btn btn-outline-primary waves-effect btn-icon" title="Düzenle">
-                                        <i class="fa fa-edit"></i>
+                                    <a href="/admin/comments/show/{{ $comment->id }}" class="btn btn-outline-primary waves-effect btn-icon" title="Göster">
+                                        <i class="fa fa-eye"></i>
                                     </a>
-                                    <a href="/admin/posts/copy/{{ $post->id }}" class="btn btn-outline-secondary waves-effect btn-icon" title="Kopyala">
-                                        <i class="fa fa-copy"></i>
-                                    </a>
-                                    {{--todo: Burada Kaldın--}}
-                                    <a href="/admin/comments/get-post-of-commenets/{{ $post->id }}" class="btn btn-outline-secondary waves-effect btn-icon" title="Yorumlar">
-                                        <i class="fa fa-comments-o"></i>
-                                    </a>
-                                    <a href="/admin/posts/delete/{{ $post->id }}" class="btn btn-outline-danger btn-icon waves-effect" title="Sil">
+                                    <a href="/admin/comments/delete/{{ $comment->id }}" class="btn btn-outline-danger btn-icon waves-effect" title="Sil">
                                         <i class="fa fa-trash-o"></i>
                                     </a>
                                 </td>
