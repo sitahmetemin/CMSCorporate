@@ -4,11 +4,11 @@ Route::get('/login', 'AdminAuthController@index')->name('login');
 Route::post('/login', 'AdminAuthController@check')->name('loginCheck');
 Route::get('/logout', 'AdminAuthController@logout')->name('logout');
 
-//Route::prefix('admin')->group(function () {
-//    Middleware auth control
 Route::prefix('admin')->middleware(['auth'])->group(function () {
 
-    Route::get('/home', 'AdminHomeController@index');
+    Route::get('/index', 'AdminHomeController@index')->name('adminHome');
+    Route::get('/index.html', 'AdminHomeController@index')->name('adminHome');
+    Route::get('/home', 'AdminHomeController@index')->name('adminHome');
 
     Route::prefix('menus')->group(function () {
         Route::get('/', 'AdminMenuController@index');
