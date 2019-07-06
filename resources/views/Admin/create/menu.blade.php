@@ -93,26 +93,21 @@
 
 @section('css')
     {{--icon picker--}}
-{{--    <link rel="stylesheet" href="/admin/custom_component/fontawesome-iconpicker-3.2.0/dist/css/fontawesome-iconpicker.min.css">--}}
-    <style>
-        .fade{
-            opacity: unset !important;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/admin/assets/icon/font-awesome-v5-free/css/all.min.css">
+    <link rel="stylesheet" href="/admin/custom_component/fontawesome-iconpicker-3.2.0/dist/css/fontawesome-iconpicker.min.css">
 
-    <link rel="stylesheet" href="/admin/custom_component/fontawesome-iconpicker-1.3.1/dist/css/fontawesome-iconpicker.min.css">
 
 @endsection
 
 @section('js')
 
     {{--icon picker--}}
-{{--    <script src="/admin/custom_component/fontawesome-iconpicker-3.2.0/dist/js/fontawesome-iconpicker.min.js"></script>--}}
-    <script src="/admin/custom_component/fontawesome-iconpicker-1.3.1/dist/js/fontawesome-iconpicker.min.js"></script>
-
+    <script src="/admin/custom_component/fontawesome-iconpicker-3.2.0/dist/js/fontawesome-iconpicker.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#iconPicker').iconpicker();
+            $('#iconPicker').iconpicker({
+                animation: false
+            });
         });
     </script>
 @endsection
