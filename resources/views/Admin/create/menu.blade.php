@@ -93,14 +93,22 @@
 
 @section('css')
     {{--icon picker--}}
-    <link rel="stylesheet" href="/admin/custom_component/fontawesome-iconpicker-3.0.0/dist/css/fontawesome-iconpicker.min.css">
+{{--    <link rel="stylesheet" href="/admin/custom_component/fontawesome-iconpicker-3.2.0/dist/css/fontawesome-iconpicker.min.css">--}}
+    <style>
+        .fade{
+            opacity: unset !important;
+        }
+    </style>
+
+    <link rel="stylesheet" href="/admin/custom_component/fontawesome-iconpicker-1.3.1/dist/css/fontawesome-iconpicker.min.css">
 
 @endsection
 
 @section('js')
-    {{--todo: Unutma! fontawesome icon picker göstermiyor ona bak. Çalışıyor ama göstermiyor.--}}
+
     {{--icon picker--}}
-    <script src="/admin/custom_component/fontawesome-iconpicker-3.0.0/dist/js/fontawesome-iconpicker.min.js"></script>
+{{--    <script src="/admin/custom_component/fontawesome-iconpicker-3.2.0/dist/js/fontawesome-iconpicker.min.js"></script>--}}
+    <script src="/admin/custom_component/fontawesome-iconpicker-1.3.1/dist/js/fontawesome-iconpicker.min.js"></script>
 
     <script>
         $(document).ready(function () {
