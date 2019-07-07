@@ -37,3 +37,50 @@ $(document).ready(function () {
     }
 
 });
+
+genericAjax = (method, url, data, pageLoader = true, successFunc = null, errorFunc = null) => {
+
+    if (pageLoader === true)
+        showLoader();
+
+    //response status;
+    let status = true;
+
+    $.ajax({
+        method: method,
+        url: url,
+        data: data,
+
+    }).done(function (msg) {
+
+        if (pageLoader === true)
+            hideLoader();
+
+        successFunc(msg);
+
+        status = true;
+
+    }).fail(function (response) {
+
+        console.log("fail response", response);
+
+        if (pageLoader === true)
+            hideLoader();
+
+        status = false;
+
+        errorFunc(response);
+
+    });
+
+    return status;
+
+};
+
+const hideLoader = () => {
+    $('.custom-loader-bg').css('display', 'none');
+};
+
+const showLoader = () => {
+    $('.custom-loader-bg').css('display', 'flex');
+};

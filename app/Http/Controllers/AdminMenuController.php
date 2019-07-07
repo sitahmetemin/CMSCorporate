@@ -26,9 +26,8 @@ class AdminMenuController extends Controller
     {
         try {
 
-            if (empty($request->slug)) {
+            if (empty($request->slug))
                 $request->merge(['slug' => Str::slug($request->name, '-')]);
-            }
 
 
             Menu::create($request->except('_token'));
@@ -70,9 +69,17 @@ class AdminMenuController extends Controller
 
 
         } catch (\Exception $e) {
-
             return redirect('/admin/menus')->with('status', $e);
         }
+    }
+
+    public function checkSlug(Request $request)
+    {
+        $found = Menu::where('slug', $request->slug)->first();
+        if (empty($found))
+            return 'not-found';
+        else
+            return 'found';
     }
 
     public function destroy($id)

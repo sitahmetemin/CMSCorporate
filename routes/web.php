@@ -15,6 +15,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
         Route::get('/create', 'AdminMenuController@create');
 
+        Route::post('/create/check-slug', 'AdminMenuController@checkSlug');
+
         Route::get('/edit/{id}', 'AdminMenuController@edit');
 
         Route::get('/delete/{id}', 'AdminMenuController@destroy');

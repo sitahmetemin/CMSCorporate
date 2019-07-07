@@ -15,6 +15,16 @@
 </div>
 </div>
 
+<div class="custom-loader-bg">
+    <div class="preloader3 loader-block">
+        <div class="circ1"></div>
+        <div class="circ2"></div>
+        <div class="circ3"></div>
+        <div class="circ4"></div>
+    </div>
+    <h3>Lütfen bekleyin</h3>
+</div>
+
 <!-- Warning Section Starts -->
 <!-- Older IE warning message -->
 <!--[if lt IE 10]>
